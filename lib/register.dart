@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:upuc/typecare.dart';
 
 class RegisterScreen extends StatelessWidget {
 
@@ -41,35 +42,20 @@ class RegisterScreen extends StatelessWidget {
                   labelText: 'Celular',
                 )
               ),
-              TextFormField(
-                validator: (value) {
-                  if (value.isEmpty) {
-                    return 'Please enter some text';
-                  }
-                  return null;
-                },
-              ),
-
-              TextFormField(
-                validator: (value) {
-                  if (value.isEmpty) {
-                    return 'Please enter some text';
-                  }
-                  return null;
-                },
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 16.0),
-                child: RaisedButton(
-                  onPressed: () {
-                    
-                  },
-                  child: Text('Submit'),
-                ),
-              ),
+            
             ],
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => TypeCareScreen()),
+          );
+        },
+        label: Text('Siguiente'),
+        backgroundColor: Colors.pink,
       ),
     );
   }
