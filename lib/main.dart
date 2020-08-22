@@ -42,10 +42,14 @@ class _MyHomePageState extends State<MyHomePage> {
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
           children: <Widget>[
-            DrawerHeader(
-              child: Text(''),
+            UserAccountsDrawerHeader(
+              accountName: Text('Innova Schools - Pueblo Libre'),
+              accountEmail: Text('Grado 8C'),
+              currentAccountPicture: CircleAvatar(
+                radius: 20,
+                backgroundImage: AssetImage('assets/images/panda.jpg'),
+              ),
               decoration: BoxDecoration(
-                color: Colors.pink,
                 image: DecorationImage(
                   image: AssetImage('assets/images/innova-pueblo-libre.jpg'),
                   fit: BoxFit.cover
@@ -57,11 +61,34 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('INTEGRANTES'),
             ),
             ListTile(
-              title: Text('Daira Castro Contreras'),
-              onTap: () {
-                // Update the state of the app.
-                // ...
-              },
+              title: Text('Daira Castro'),
+              enabled: true,
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text('Arantxa Villanes'),
+              enabled: true,
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text('Celina Ruiz'),
+              enabled: true,
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text('Alejandro Ramos'),
+              enabled: true,
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text('Alejandra Jimenez'),
+              enabled: true,
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text('Cathy Salmón'),
+              enabled: true,
+              onTap: () {},
             ),
           ],
         ),
