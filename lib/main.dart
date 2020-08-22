@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:upuc/register.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,11 +11,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'UPUC',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.pink,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'UPUC'),
     );
   }
 }
@@ -43,24 +45,39 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+      body: Padding(
+        padding: EdgeInsets.all(20),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Padding(padding: EdgeInsets.all(20)),
+              Image.asset('assets/images/upuc.png', width: 170,),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 7, vertical: 30),
+                child: Text(
+                  'Esta app está hecha para poder recaudar fondos para las personas en situación de necesidad de manera que se puedad apoyar con dinero o alimentos toda ayuda sera bien recibida. si deseas apoyar dale en siguiente.',
+                  style: TextStyle(
+                    fontSize: 14,
+                    height: 1.8,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => RegisterScreen()),
+          );
+        },
+        label: Text('Ingresar'),
+        icon: Icon(Icons.thumb_up),
+        backgroundColor: Colors.pink,
       ),
     );
   }
