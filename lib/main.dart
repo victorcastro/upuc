@@ -31,12 +31,40 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              child: Text(''),
+              decoration: BoxDecoration(
+                color: Colors.pink,
+                image: DecorationImage(
+                  image: AssetImage('assets/images/innova-pueblo-libre.jpg'),
+                  fit: BoxFit.cover
+                )
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Text('INTEGRANTES'),
+            ),
+            ListTile(
+              title: Text('Daira Castro Contreras'),
+              onTap: () {
+                // Update the state of the app.
+                // ...
+              },
+            ),
+          ],
+        ),
       ),
       body: Padding(
         padding: EdgeInsets.all(20),
@@ -45,7 +73,10 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Padding(padding: EdgeInsets.all(20)),
-              Image.asset('assets/images/upuc.png', width: 170,),
+              Image.asset(
+                'assets/images/upuc.png',
+                width: 170,
+              ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 7, vertical: 30),
                 child: Text(

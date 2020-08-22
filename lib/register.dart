@@ -24,18 +24,21 @@ class RegisterScreen extends StatelessWidget {
                   labelText: 'Nombres completos',
                 )
               ),
+              Padding(padding: EdgeInsets.all(10)),
               TextFormField(
                 decoration: const InputDecoration(
                   icon: Icon(Icons.location_city),
                   labelText: 'Dirección',
                 )
               ),
+              Padding(padding: EdgeInsets.all(10)),
               TextFormField(
                 decoration: const InputDecoration(
                   icon: Icon(Icons.card_travel),
                   labelText: 'DNI o CE',
                 )
               ),
+              Padding(padding: EdgeInsets.all(10)),
               TextFormField(
                 decoration: const InputDecoration(
                   icon: Icon(Icons.phone),

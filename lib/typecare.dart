@@ -41,7 +41,12 @@ class TypeCareScreen extends StatelessWidget {
                   children: [
                     FlatButton(
                       padding: EdgeInsets.all(15),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => ThanksScreen()),
+                        );
+                      },
                       child: Image.asset('assets/images/comida.png', width: 150,),
                     ),
                     Text('Apoyo alimenticio'),
