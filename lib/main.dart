@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:upuc/components/customShapeClipper.dart';
 import 'package:upuc/register.dart';
 
 void main() {
@@ -30,12 +31,14 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
+// 'Esta app está hecha para poder recaudar fondos para las personas en situación de necesidad de manera que se puedad apoyar con dinero o alimentos toda ayuda sera bien recibida. si deseas apoyar dale en siguiente.',
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        elevation: 0  ,
       ),
       drawer: Drawer(
         child: ListView(
@@ -93,31 +96,21 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(20),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              Padding(padding: EdgeInsets.all(20)),
-              Image.asset(
-                'assets/images/upuc.png',
-                width: 170,
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 7, vertical: 30),
-                child: Text(
-                  'Esta app está hecha para poder recaudar fondos para las personas en situación de necesidad de manera que se puedad apoyar con dinero o alimentos toda ayuda sera bien recibida. si deseas apoyar dale en siguiente.',
-                  style: TextStyle(
-                    fontSize: 14,
-                    height: 1.8,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ],
+      body: Stack(
+        children: [
+          ClipPath(
+            clipper: CustomShapeClipper(),
+            child: Container(height: 260, color: Colors.pink),
           ),
-        ),
+          Padding(
+            padding: const EdgeInsets.all(30.0),
+            child: Column(
+              children: [
+                Text('Esta app está hecha para poder recaudar fondos para las personas en situación de necesidad de manera que se puedad apoyar con dinero o alimentos toda ayuda sera bien recibida. si deseas apoyar dale en siguiente.', style: TextStyle(color: Colors.white, height: 1.7), textAlign: TextAlign.center)
+              ],
+            ),
+          )
+        ],
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
