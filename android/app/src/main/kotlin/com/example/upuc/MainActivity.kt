@@ -1,4 +1,4 @@
-package com.example.upuc
+package com.castrocontreras.upuc
 
 import io.flutter.embedding.android.FlutterActivity
 
