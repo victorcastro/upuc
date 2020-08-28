@@ -7,7 +7,7 @@ class ThanksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      backgroundColor: Color(0xFFF0F0F0),
       body: Padding(
         padding: const EdgeInsets.all(35.0),
         child: Center(

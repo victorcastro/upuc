@@ -40,6 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
         elevation: 0  ,
       ),
+      backgroundColor: Color(0xFFF0F0F0),
       drawer: Drawer(
         child: ListView(
           // Important: Remove any padding from the ListView.
@@ -100,12 +101,14 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           ClipPath(
             clipper: CustomShapeClipper(),
-            child: Container(height: 260, color: Colors.pink),
+            child: Container(height: 280, color: Colors.pink),
           ),
           Padding(
-            padding: const EdgeInsets.all(30.0),
+            padding: const EdgeInsets.all(20.0),
             child: Column(
               children: [
+                Text('Unidos Por Una Causa', style: TextStyle(fontSize: 22, color: Colors.white),),
+                Padding(padding: EdgeInsets.all(10)),
                 Text('Esta app está hecha para poder recaudar fondos para las personas en situación de necesidad de manera que se puedad apoyar con dinero o alimentos toda ayuda sera bien recibida. si deseas apoyar dale en siguiente.', style: TextStyle(color: Colors.white, height: 1.7), textAlign: TextAlign.center)
               ],
             ),
@@ -119,8 +122,9 @@ class _MyHomePageState extends State<MyHomePage> {
             MaterialPageRoute(builder: (context) => RegisterScreen()),
           );
         },
-        label: Text('Ingresar'),
-        icon: Icon(Icons.thumb_up),
+        label: Row(
+          children: [Text("Solicitar apoyo "), Icon(Icons.local_hospital)],
+        ),
         backgroundColor: Colors.pink,
       ),
     );

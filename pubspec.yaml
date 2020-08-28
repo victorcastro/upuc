@@ -52,6 +52,12 @@ flutter:
     - assets/images/panda.png
     - assets/images/panda.jpg
     - assets/images/innova-pueblo-libre.jpg
+    - assets/images/prod-bebes.jpg
+    - assets/images/prod-covid.jpg
+    - assets/images/prod-higiene.jpg
+    - assets/images/prod-medicinas.jpg
+    - assets/images/prod-ropa.jpg
+    - assets/images/prod-viveres.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
