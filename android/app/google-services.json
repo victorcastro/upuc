@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "567989742786",
+    "firebase_url": "https://upuc-a8fc1.firebaseio.com",
+    "project_id": "upuc-a8fc1",
+    "storage_bucket": "upuc-a8fc1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:567989742786:android:47356b742466fbd9e11f5b",
+        "android_client_info": {
+          "package_name": "com.castrocontreras.upuc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "567989742786-n637po153fhni4lq219uqdcsqm9969bb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.castrocontreras.upuc",
+            "certificate_hash": "e4b064e4e911431939f5feb0a97794c30f4b82e7"
+          }
+        },
+        {
+          "client_id": "567989742786-acpq7mpt93shvllluajc41up79sop84g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-_Et-Jg5CiytuKPKsjRrWvxdpImy287g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "567989742786-acpq7mpt93shvllluajc41up79sop84g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

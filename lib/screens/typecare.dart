@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:upuc/components/customShapeClipper.dart';
+import 'package:upuc/screens/accounts.dart';
 import 'package:upuc/screens/products.dart';
-import 'package:upuc/thanks.dart';
 
 class TypeCareScreen extends StatelessWidget {
 
@@ -36,7 +36,7 @@ class TypeCareScreen extends StatelessWidget {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => ThanksScreen()),
+                              MaterialPageRoute(builder: (context) => AccountScreen()),
                             );
                           },
                           child: Image.asset('assets/images/efectivo.png', width: 150,),

@@ -1,8 +1,12 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:upuc/components/customShapeClipper.dart';
 import 'package:upuc/register.dart';
+import 'package:upuc/screens/donations.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -31,14 +35,16 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-// 'Esta app está hecha para poder recaudar fondos para las personas en situación de necesidad de manera que se puedad apoyar con dinero o alimentos toda ayuda sera bien recibida. si deseas apoyar dale en siguiente.',
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
-        elevation: 0  ,
+        elevation: 0,
+        actions: [
+
+        ],
       ),
       backgroundColor: Color(0xFFF0F0F0),
       drawer: Drawer(
@@ -123,7 +129,7 @@ class _MyHomePageState extends State<MyHomePage> {
           );
         },
         label: Row(
-          children: [Text("Solicitar apoyo "), Icon(Icons.local_hospital)],
+          children: [Text("Enviar apoyo "), Icon(Icons.local_hospital)],
         ),
         backgroundColor: Colors.pink,
       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:upuc/components/customShapeClipper.dart';
-import 'package:upuc/typecare.dart';
+import 'package:upuc/screens/typecare.dart';
 
 class RegisterScreen extends StatelessWidget {
 
