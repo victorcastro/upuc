@@ -151,7 +151,9 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Text('Unidos Por Una Causa', style: TextStyle(fontSize: 22, color: Colors.white),),
                 Padding(padding: EdgeInsets.all(10)),
-                Text('Esta app está hecha para poder recaudar fondos para las personas en situación de necesidad de manera que se puedad apoyar con dinero o alimentos toda ayuda sera bien recibida. si deseas apoyar dale en siguiente.', style: TextStyle(color: Colors.white, height: 1.7), textAlign: TextAlign.center)
+                Text('Esta app está hecha para poder recaudar fondos para las personas en situación de necesidad de manera que se puedad apoyar con dinero o alimentos toda ayuda sera bien recibida. si deseas apoyar dale en siguiente.', style: TextStyle(color: Colors.white, height: 1.7), textAlign: TextAlign.center),
+                SizedBox(height: 120),
+                Image.asset('assets/images/panda.png', width: 170,),
               ],
             ),
           )
