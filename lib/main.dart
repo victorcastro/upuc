@@ -2,9 +2,11 @@ import 'dart:ui';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:upuc/components/customShapeClipper.dart';
 import 'package:upuc/register.dart';
 import 'package:upuc/screens/donations.dart';
+import 'package:yaml/yaml.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -71,7 +73,26 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
         elevation: 0,
-        actions: [],
+        actions: [
+          FutureBuilder(
+              future: rootBundle.loadString("pubspec.yaml"),
+              builder: (context, snapshot) {
+                String version = "Unknown";
+                if (snapshot.hasData) {
+                  var yaml = loadYaml(snapshot.data);
+                  version = yaml["version"];
+                }
+
+                return Container(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                        'Ver ${version.split("+")[0]}'
+                    ),
+                  ),
+                );
+              }),
+        ],
       ),
       backgroundColor: Color(0xFFF0F0F0),
       drawer: Drawer(
@@ -135,7 +156,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onTap: () {
                 _createAlertDialog(context);
               },
-            )
+            ),
           ],
         ),
       ),
