@@ -9,7 +9,7 @@ class TypeCareScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Necesito apoyo'),
+        title: Text('Tipo de apoyo'),
         elevation: 0,
       ),
       backgroundColor: Color(0xFFF0F0F0),

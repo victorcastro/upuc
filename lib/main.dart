@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:upuc/components/customShapeClipper.dart';
@@ -36,15 +38,40 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  _createAlertDialog(BuildContext context) {
+
+    TextEditingController customController = TextEditingController();
+
+    return showDialog(context: context, builder: (context) {
+      return AlertDialog(
+        title: Text('Contraseña'),
+        content: TextField(
+          controller: customController,
+        ),
+        actions: [
+          MaterialButton(
+            elevation: 5.0,
+            child: Text('Confirmar'),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DonationsScreen()),
+              );
+            },
+          )
+        ],
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
         elevation: 0,
-        actions: [
-
-        ],
+        actions: [],
       ),
       backgroundColor: Color(0xFFF0F0F0),
       drawer: Drawer(
@@ -53,8 +80,8 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: EdgeInsets.zero,
           children: <Widget>[
             UserAccountsDrawerHeader(
-              accountName: Text('Innova Schools - Pueblo Libre'),
-              accountEmail: Text('Grado 8C'),
+              accountName: Text('Innova Schools - Pueblo Libre', style: TextStyle(fontSize: 18),),
+              accountEmail: Text('Grado 8C', style: TextStyle(),),
               currentAccountPicture: CircleAvatar(
                 radius: 20,
                 backgroundImage: AssetImage('assets/images/panda.jpg'),
@@ -70,6 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
               padding: const EdgeInsets.all(10.0),
               child: Text('INTEGRANTES'),
             ),
+            Divider(),
             ListTile(
               title: Text('Daira Castro'),
               enabled: true,
@@ -100,6 +128,14 @@ class _MyHomePageState extends State<MyHomePage> {
               enabled: true,
               onTap: () {},
             ),
+            Divider(),
+            ListTile(
+              title: Text('Donaciones', style: TextStyle(color: Colors.pink),),
+              leading: Icon(Icons.lock, color: Colors.pink,),
+              onTap: () {
+                _createAlertDialog(context);
+              },
+            )
           ],
         ),
       ),

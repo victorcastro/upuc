@@ -26,9 +26,10 @@ class DonationsScreen extends StatelessWidget {
 
             return new ListView(
               children: snapshot.data.documents.map((DocumentSnapshot document) {
+
               return new ListTile(
-              title: new Text(document.data()['fullname']),
-              subtitle: new Text(document.data()['document']),
+                title: new Text(document.data()['fullname'] + ' (+51 ' + document.data()['phone'] + ')'),
+                subtitle: new Text(document.data()['address']),
               );
               }).toList(),
             );
